@@ -1,19 +1,15 @@
 package com.san.osm.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import java.util.List;
 
-import com.san.osm.dao.UserRepository;
+import org.springframework.stereotype.Component;
+
 import com.san.osm.entity.User;
 
-@Service
-public class UserService {
+@Component
+public interface UserService {
 
-	@Autowired
-	private UserRepository userRepo;
+	public List<User> getListOfUser();
 
-	public User addUser(User user) {
-		return userRepo.save(user);
-	}
-
+	public User addUser(User user);
 }

@@ -22,13 +22,12 @@ public class UserController {
 	
 	@RequestMapping(value = "/list", method = { RequestMethod.OPTIONS, RequestMethod.GET })
 	public List<User> getUsers(){
-		return null;
+		return userService.getListOfUser();
 	}
 	
 	@RequestMapping(value = "/add", method = { RequestMethod.OPTIONS, RequestMethod.POST })
-	public List<User> addUser(@RequestBody User user){
-		userService.addUser(user);
-		return null;
+	public User addUser(@RequestBody User user){
+		return userService.addUser(user);
 	}
 
 	
